@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .active {
+            color: #7e664e;        
+        }
+        
+        .notActive {
+            color: #3452ed;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="static" :class="{active: isActive, notActive: !isActive}">{{ name }}</h1>
+        <h1 :class="[isActive ? 'active' : 'notActive']"> {{ name }} </h1>
+<!--        operator trojargumentowy wymaga nawiasow kwadratowych-->
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isActive: false,
+                name: 'Maciek'
+            }
+        })
+    </script>
+</body>
+</html>

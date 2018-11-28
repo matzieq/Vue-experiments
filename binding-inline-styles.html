@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div :style="{color: 'red', fontSize: fontSize + 'px'}">{{message}}</div>
+        <div :style='styleObj'>{{message}} </div>
+        <div :style='[styleObj, styleObj2]'>{{message}} </div>
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                fontSize: 30,
+                styleObj: {
+                    color: 'blue',
+                    fontSize: '30px' 
+                    
+                },
+                styleObj2: {
+                    border: '1px solid blue',
+                    textAlign: 'center',
+                    borderRadius: '6px' 
+                }
+            }
+        })
+    </script>
+</body>
+</html>

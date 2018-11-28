@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-on:click="number++">{{number}}</h1>
+        <h1 @click="number--">DECREASE</h1>
+        <!--            @ short-hand-->
+        <form action="" @submit.prevent="number++">
+           <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                number: 10
+            }
+        })
+    </script>
+</body>
+</html>

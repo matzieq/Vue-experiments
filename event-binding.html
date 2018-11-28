@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="increaseFont">{{message}}</button>
+    
+        <button @click="decreaseFont">{{message}}</button>
+        <div :style="{fontSize: fontSize + 'px'}"> {{ message }} </div>
+       
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                fontSize: 12,
+            },
+            methods: {
+                increaseFont () {
+                    this.fontSize++;
+                },
+                decreaseFont () {
+                    this.fontSize--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
