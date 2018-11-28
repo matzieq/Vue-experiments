@@ -6,7 +6,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
+        <h1>Maciek {{ isActive === "active" ? "is active" : "not active"}}</h1>
     </div>
    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -14,7 +14,12 @@
         let vm = new Vue({
             el: '#app',
             data: {
-                message: 'Hello'
+                isActive: 'not active'
+            },
+            watch: {
+                isActive: function (newValue) {
+                    console.log("AAA" + newValue);
+                }
             }
         })
     </script>
